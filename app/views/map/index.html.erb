@@ -10,14 +10,14 @@
 
  <script>
 
-  var geojsons = <%= raw EducationFacility.to_json(@records_array) %>;
+  var geojsons = <%= raw EducationFacility.to_json %>;
 
     document.addEventListener("DOMContentLoaded", function(event) { 
         loadMap();
     });
 
     function onEachFeature(feature, layer) {
-		popupContent = feature.properties.popupContent;
+		popupContent = feature.properties.name;
 		layer.bindPopup(popupContent);
 	}
 
